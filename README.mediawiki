@@ -1,0 +1,25 @@
+
+This is a simple Chicago Boss application that lets you receive and review "feedback" messages,
+the idea being that it would let users give you feedback on what they like (or don't) about your web site.
+Mostly, the point of this is to demonstrate how Chicago Boss mail controllers work,
+since the documentation on that is pretty scattered,
+and there are some quirks of email configuration separate from Chicago Boss.
+
+== Receiving email
+Chicago Boss can act as an email server, as well as a web server.
+The catch in setting up a development environment, where your app is running as a regular user,
+is that you don't have permission to use the standard email port (25),
+so you need to tell CB to use a different one.
+(See boss.config for how that's done.)
+
+The other half of this is that you need to ''send'' email to that non-standard port.
+The easiest way to do this (at least on Linux) is using the 'mail' utility (part of the mailutils package).
+Configuring it to use a non-standard port was surprisingly hard to track down documentation for,
+but in the end it's pretty straightforward.
+You just need to create a <code>~/.mailrc</code> file containing.
+ set sendmail="smtp://0.0.0.0:8025"
+This tells 'mail' to send all email by way of the server running on local port 8025 (as in boss.config).
+
+== Caveats
+This is just example code. I'd be astonished if you could actually re-use it as-is.
+

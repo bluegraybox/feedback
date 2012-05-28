@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <style type="text/css">
+      .feedback { border: 1px solid gray; }
+      .from, .subject, .timestamp {
+        display: inline-block;
+        border: 1px solid #ddf;
+        padding: 5px;
+        margin: 5px;
+      }
+      .body {
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Feedback</h1>
+    <div id="feedback-list">
+      {% for feedback in feedbacks %}
+        <div class="feedback">
+          <div class="from"><strong>From:</strong> {{ feedback.from }} </div>
+          <div class="subject"><strong>Subject:</strong> {{ feedback.subject }} </div>
+          <div class="timestamp"><strong>Time:</strong> {{ feedback.create_time }} </div>
+          <div class="body">{{ feedback.body }} </div>
+        </div>
+      {% endfor %}
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+    <script src="https://raw.github.com/janl/mustache.js/master/mustache.js"></script>
+    <script src="/static/feedback.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        console.log("listening for events since {{ timestamp }}");
+        listen_for_events({{ timestamp }});
+      });
+    </script>
+  </body>
+</html>
