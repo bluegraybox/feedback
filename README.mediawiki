@@ -29,6 +29,6 @@ Once that's all configured, you can send mail like so:
 
 == Caveats ==
 This is just example code. Run it, poke at it, see how it works.
-It may be helpful look at the [commit/438e242c53d041c869d8d4e26f62b5d39ada4405 first commit],
+It may be helpful look at the [https://github.com/bluegraybox/feedback/commit/438e242c53d041c869d8d4e26f62b5d39ada4405 first commit],
 to get a sense of what had to be added and changed from the auto-generated Chicago Boss app.
 
