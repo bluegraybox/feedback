@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <style type="text/css">
+      .error { border: 1px solid #600; background-color: #fdd; }
+      .thanks { border: 1px solid #060; background-color: #dfd; }
+      label, input { display: block; }
+    </style>
+  </head>
+  <body>
+    <h1>Feedback</h1>
+    {% if thanks %}
+      <div class="thanks">
+        Thanks for your feedback!
+      </div>
+    {% endif %}
+    {% if errors %}
+      <div class="error">
+      {% for error in errors %}
+        <p>{{ error }}</p>
+      {% endfor %}
+      </div>
+    {% endif %}
+    <form method="post">
+      <label for="feedback_text">Give us some feedback!</label>
+      <textarea name="feedback_text" rows="3">{% if new_feedback %}{{ new_feedback.feedback_text }}{% endif %}</textarea>
+      <input type="submit" class="btn btn-primary">
+    </form>
+  </body>
+</html>
+
