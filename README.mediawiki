@@ -5,6 +5,10 @@ Mostly, the point of this is to demonstrate how Chicago Boss mail controllers wo
 since the documentation on that is pretty scattered,
 and there are some quirks of email configuration separate from Chicago Boss.
 
+== Installation ==
+You need to have Erlang and Chicago Boss installed.
+Once those are working, edit your <code>boss.config</code> file and change the <code>path</code> setting to point to your Chicago Boss installation.
+
 == Configuring email ==
 Chicago Boss can act as an email server, as well as a web server.
 The catch in setting up a development environment, where your app is running as a regular user,
